@@ -1,4 +1,4 @@
-;; Enhanced Ruby Mode
+;; enhanced ruby mode
 (use-package enh-ruby-mode
   :ensure t)
 (setq enh-ruby-program "/Users/kruk/.rvm/rubies/ruby-2.1.3/bin/ruby")
@@ -11,3 +11,20 @@
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+
+;; rinari
+(use-package rinari
+  :ensure t)
+(require 'rinari)
+
+;; rhtml
+(use-package rhtml-mode
+  :ensure t)
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+	  (lambda () (rinari-launch)))
+
+(use-package yaml-mode
+  :ensure t)
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
