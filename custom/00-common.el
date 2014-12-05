@@ -8,6 +8,9 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'enh-ruby-mode)
 (add-to-list 'ac-modes 'web-mode)
+(defun ac-ruby-mode-setup ()
+  (make-local-variable 'ac-ignores)
+  (add-to-list 'ac-ignores "end"))
 
 (menu-bar-mode -1) ;; hide top menu bar
 
@@ -17,7 +20,7 @@
 (size-indication-mode t)                 ;; show file size (emacs 22+)
 
 ;; http://stackoverflow.com/questions/3631220/fix-to-get-smooth-scrolling-in-emacs
-(setq redisplay-dont-pause t  
+(setq redisplay-dont-pause t
       scroll-margin 1
       scroll-step 1
       scroll-conservatively 10000
