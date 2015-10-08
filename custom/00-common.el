@@ -42,7 +42,20 @@
 
 ;; limit line length
 (require 'whitespace)
-(setq whitespace-line-column 100)
+(setq whitespace-line-column 80)
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (global-whitespace-mode +1)
+
+;; disable auto indent
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
+
+;; backups
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.saves"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups

@@ -28,3 +28,13 @@
   :ensure t)
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+;; rubocop
+(use-package dash
+  :ensure t)
+
+(require 'rubocop)
+
+;; elpa/rubocop-20141221.1329/
+;; (use-package rubocop
+;;   :ensure t)

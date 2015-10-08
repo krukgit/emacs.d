@@ -1,8 +1,16 @@
+(setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
+(setq debug-on-error t)    ; now you should get a backtrace
+
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "https://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+			 ))
 (require 'package)
 (package-initialize)
+
+;; set PATH to system PATH
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 (if (not (package-installed-p 'use-package))
     (progn
