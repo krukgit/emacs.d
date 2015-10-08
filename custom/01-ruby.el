@@ -1,7 +1,7 @@
 ;; enhanced ruby mode
 (use-package enh-ruby-mode
   :ensure t)
-(setq enh-ruby-program "/Users/kruk/.rvm/rubies/ruby-2.1.3/bin/ruby")
+(setq enh-ruby-program "/Users/kruk/.rvm/rubies/ruby-2.2.3/bin/ruby")
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake$" . enh-ruby-mode))
